@@ -413,7 +413,7 @@
             overflow: hidden;
             text-overflow: ellipsis;
         }
-        .book-info p {
+                .book-info p {
             color: var(--text-muted);
             font-size: 0.85rem;
             line-height: 1.5;
@@ -421,6 +421,7 @@
             overflow: hidden;
             display: -webkit-box;
             -webkit-line-clamp: 2;
+            line-clamp: 2;
             -webkit-box-orient: vertical;
             margin-bottom: 15px;
         }
@@ -671,8 +672,13 @@
         <div class="hero-module">
             
             <div class="cinematic-bg-container">
-                <img src="01.png" alt="Cinematic Background" class="cinematic-img">
-                <div class="cinematic-overlay"></div>
+                <div class="sov-secondary-bg" aria-hidden="true"></div>
+    <div class="sovereign-video-bg-container">
+    <video autoplay loop muted playsinline class="sovereign-video-element">
+        <source src="100.mp4" type="video/mp4">
+    </video>
+    <div class="sovereign-video-overlay"></div>
+</div>
             </div>
 
             <div class="hero-text">
@@ -735,63 +741,52 @@
         // --- 1. LOCAL BOOK DATA ARRAY MATRIX ---
         // To append new books effortlessly, mirror the objects parameters below.
         const BOOKS_DATA = [
-            {
-                id: 1,
-                titleAr: "البرمجة بالبناء",
-                titleEn: "Constructionist Development",
-                author: "Overhaul Core",
-                category: "economy", 
-                price: "2500 دج",
-                cover: "02.png",
-                descAr: "دليلك العملي لتعلم تطوير الويب بالبناء الفوري. انسَ الحفظ الأكاديمي، وابنِ موقعك الاحترافي الأول في 30 يوماً فقط.",
-                descEn: "Forget academic theories. Build interactive high-tier frontend web architectures in 30 cycles flat."
-            },
-            {
-                id: 2,
-                titleAr: "نظام الذكاء الاصطناعي للمحترفين",
-                titleEn: "The AI Professional's System",
-                author: "Overhaul Core",
-                category: "psychology",
-                price: "3500 دج",
-                cover: "03.png",
-                descAr: "دليلك العملي لتحويل عملك اليومي باستخدام أدوات الذكاء الاصطناعي. ابدأ بالأتمتة ووفر ساعات من وقتك الثمين.",
-                descEn: "A complete framework to script autonomous routines, automate complex systems, and accelerate standard performance parameters."
-            },
-            {
-                id: 3,
-                titleAr: "The AI Professional's Playbook",
-                titleEn: "The AI Professional's Playbook",
-                author: "Overhaul Core",
-                category: "economy",
-                price: "3500 دج",
-                cover: "04.png",
-                descAr: "النسخة الإنجليزية الاحترافية من دليل أتمتة الأنظمة وتوظيف النماذج اللغوية في سلاسل التوريد والعمل اليومي.",
-                descEn: "Your practical guide to transforming daily work with Artificial Intelligence. Automate tasks and build a smart workflow."
-            },
-            {
-                id: 4,
-                titleAr: "الصعود إلى الأفق فن الترقي وتطوير الذات",
-                titleEn: "Reaching the horizon is the art of advancement and self-development.",
-                author: "Overhaul Core",
-                category: "psychology",
-                price: "800 دج",
-                cover: "05.png",
-                descAr: "الصعود إلى الأفق — فن الترقي وتطوير الذات. كتاب رقمي راقٍ بخط أندلسي. 8 فصول تُعيد بناء إنسانك من الداخل. 🌙📖✨",
-                descEn: "The Ascent to the Horizon — The Art of Elevation & Self-Development. An elegant digital book in Andalus font. 8 chapters that rebuild your inner self from the inside out. 🌙📖✨"
-            },
-             {
-                id: 5,
-                titleAr: "نبض_القلوب",
-                titleEn: "Heartbeat",
-                author: "Overhaul Core",
-                category: "romance",
-                price: "900 دج",
-                cover: "06.png",
-                descAr: "فن العلاقات والعشق. 8 فصول تُعيد بناء قلبك من الداخل. لمن أحبّ، خسر، ويريد أن يفهم.ابدأ رحلتك اليوم ",
-
-                descEn: "The Art of Relationships and Love. 8 chapters that rebuild your heart from within. For those who loved, lost, and want to understand."
-            }
-        ];
+    {
+        id: 1,
+        titleAr: "نبض القلوب: فن العلاقات والعشق",
+        titleEn: "Pulse of Hearts: The Art of Relationships",
+        author: "اسم الكاتب",
+        category: "psychology", 
+        price: "2500 دج",
+        cover: "06.png",
+        descAr: "كتاب يعالج فن العلاقات والعشق [cite: 3]، ويأخذك في رحلة روحية في أعماق ما يجعلنا بشرًا [cite: 12] لفهم لغة العيون، فن الحديث، وبناء الثقة في العلاقات.",
+        descEn: "A spiritual journey into the depths of human relationships, exploring the language of eyes, the art of conversation, and building unshakable trust."
+    },
+    {
+        id: 2,
+        titleAr: "الترقي وحيداً: لا يمكنك إيقاف عزيمتي",
+        titleEn: "Ascending Alone: Unstoppable Determination",
+        author: "اسم الكاتب",
+        category: "self-development", 
+        price: "2500 دج",
+        cover: "07.png",
+        descAr: "قصة ملهمة وتجربة حية عن قهر الفقر والاحتقار [cite: 115] والنهوض من القاع لبناء إمبراطورية شخصية عبر هندسة العقل والبرمجة [cite: 153] وإتقان الفنون القتالية[cite: 184].",
+        descEn: "An inspiring autobiographical guide on overcoming poverty and building a personal empire through mental engineering, programming, and martial arts."
+    },
+    {
+        id: 3,
+        titleAr: "الصعود إلى الأفق: فن الترقي وتطوير الذات",
+        titleEn: "Ascending to the Horizon: The Art of Self-Development",
+        author: "اسم الكاتب",
+        category: "self-development", 
+        price: "2500 دج",
+        cover: "08.png",
+        descAr: "رحلة نحو بناء إنسان كامل [cite: 257] يركز على الجوهر لا السطح، من خلال اكتساب عادات كالقراءة العميقة، النوم الجيد كسرّ للطاقة [cite: 301]، وتعلم اللغات لفتح عوالم مغلقة[cite: 332].",
+        descEn: "A holistic journey towards building a complete human being, focusing on deep reading, quality sleep, and learning languages to unlock new worlds."
+    },
+    {
+        id: 4,
+        titleAr: "تغيير العقلية: خارطة طريق النجاح المادي والذاتي",
+        titleEn: "Mindset Shift: The Roadmap to Success",
+        author: "اسم الكاتب",
+        category: "economy", 
+        price: "2500 دج",
+        cover: "cover_taghyir_alaqliya.png",
+        descAr: "دليل عملي شامل للانتقال من عقلية الضحية إلى عقلية المسؤولية [cite: 358]، يشرح علم الاقتصاد للمبتدئين وبناء الثروة [cite: 386]، ويقدم استراتيجيات لإدارة الوقت والإنتاجية العميقة[cite: 436].",
+        descEn: "A comprehensive guide to shifting from a victim mindset to accountability, mastering basic economics, building wealth from scratch, and achieving deep productivity."
+    }
+];
+            
 
         // 8 Required Strict Classification Slots
         const CATEGORIES = {
